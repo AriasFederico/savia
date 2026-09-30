@@ -1,0 +1,144 @@
+.header {
+  box-shadow: $shadow-sm;
+  z-index: 1600;
+  position: fixed;
+  border-bottom: 1px solid $color-border;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $space-2;
+  background-color: $bg-main;
+
+
+  .container {
+    max-width: 1240px;
+    // tamaño variable
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .logo {
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+
+    .avatar {
+      font-family: $font-heading;
+      color: $white;
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: $font-base;
+      font-weight: normal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: $bg-dark;
+    }
+
+    .flex {
+      display: block;
+    }
+    
+    .name {
+      white-space: nowrap;
+      color: $foreground;
+      line-height: .6;
+      margin-top: .6rem;
+      font-family: $font-heading;
+    }
+
+    .span {
+      font-size: 12px;
+      color: $foreground-muted;
+    }
+  }
+  
+  .nav {
+    max-height: 0;
+    overflow: hidden;
+    color: $white;
+    
+    @include desktop(){
+      max-height: auto;
+      overflow: visible;
+      display: flex;
+      align-items: center;
+      gap: $space-3;    
+    }
+  }    
+  
+  .navOpen {
+    background-color: white;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    gap: $space-2;
+    position: absolute;
+    max-height: 500px;
+    top: 4.7rem;
+    right: $space-1;
+    width: 90%;
+    padding:$space-3;
+  }
+
+  .link {
+    font-size: $font-sm;
+    color: $foreground-muted;
+    transition: $transition-normal;
+
+    &:hover {
+      color: $foreground;
+      text-decoration: underline;
+      
+    }
+  }
+
+
+  .cta {
+    display: none;
+
+    @include desktop(){
+      display: block;
+    }
+  }
+
+  .ctaMobile {
+    @include desktop(){
+      display: none;
+    }
+  }
+
+  .burger {
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex: 0 0 2.5rem;
+    place-items: center;
+    color: $color-primary;
+    border: 1px solid $color-border;
+    border-radius: 50%;
+
+    .burgerIcon {
+      display: grid;
+      width: 18px;
+      height: 18px;
+      place-items: center;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @include desktop(){
+      display: none;
+    }
+  }
+}

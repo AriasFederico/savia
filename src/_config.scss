@@ -1,0 +1,102 @@
+// ==========================================
+// PALETA DE COLORES (Semántica y Reutilizable)
+// ==========================================
+
+// Tonos Principales (Cambias estos 3 por cada cliente/marca)
+$color-primary:         #4a4d58;
+$color-primary-muted:   rgba(#4a4d58, 0.15); // Uso de rgba/SCSS para transparencias limpias
+$color-primary-dark:    #4a4d58;
+
+// Colores de Estado / Feedback (Estándar)
+$color-success:            #34a853;
+$color-success-muted:      rgba(#34a853, 0.1);
+$color-warning:            #f97924;
+$color-warning-muted:      rgba(#f97924, 0.1);
+$color-destructive:        #ea4334;
+$color-destructive-muted:  rgba(#ea4334, 0.1);
+$color-yellow: #f9bb04;
+
+// Escala de Grises (Superficies y Textos)
+$white:                 #ffffff;
+$bg-main:               #f7f6f1; // Blanco limpio (ideal para Salud)
+$bg-soft:               #f2f3ee; // Gris muy suave para alternar secciones
+$bg-dark:               #191b18; // Para footers o secciones contrastadas
+
+$foreground:            #191b18; // Texto principal (casi negro para máxima legibilidad)
+$foreground-muted:      #5f665c; // Texto secundario (párrafos, fechas, badges)
+$color-border:          #e2e8f0; // Bordes de tarjetas e inputs
+
+// ==========================================
+// SISTEMA DE ESPACIOS (Escala de 8px)
+// ==========================================
+$space-1: 0.5rem;   // 8px
+$space-2: 1rem;     // 16px
+$space-3: 1.5rem;   // 24px
+$space-4: 2rem;     // 32px
+$space-6: 3rem;     // 48px
+$space-8: 4rem;     // 64px 
+$space-9: 6rem;     // 96px (Paddings verticales de secciones)
+
+// ==========================================
+// TIPOGRAFÍA
+// ==========================================
+$font-sm:   0.875rem; // 14px
+$font-base: 1rem;     // 16px
+$font-lg:   1.125rem; // 18px
+$font-xl:   1.5rem;   // 24px
+$font-2xl:  2rem;     // 32px
+$font-3xl:  2.5rem;   // 40px
+$font-4xl:  3.5rem;   // 56px (Hero)
+
+// Fuentes
+$font-heading: "Fraunces", serif;
+$font-primary: "Plus Jakarta Sans", sans-serif;
+$font-code:    monospace;
+
+$weight-regular: 400;
+$weight-medium:  500;
+$weight-bold:    700;
+
+// ==========================================
+// MISCELÁNEA
+// ==========================================
+$radius-sm: 6px;
+$radius-md: 14px;
+$radius-lg: 22px;
+$radius-full: 9999px; // Para badges o botones píldora
+
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$shadow-primary: 0 10px 25px -5px rgba($color-primary, 0.3);
+
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+
+// ==========================================
+// MIXINS REUTILIZABLES
+// ==========================================
+
+// Responsive Breakpoints
+@mixin tablet {
+  @media (min-width: 768px) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) { @content; }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin container {
+  margin: 0 auto;
+  padding: 0 $space-2;
+  max-width: 1240px;
+  
+  @include tablet {
+    padding: 0 $space-4;
+  }
+}

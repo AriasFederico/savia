@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+/* ==========================================
+   1. RESET MODERNO DE BOX MODEL Y MÁRGENES
+   ========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================
+   2. CONFIGURACIÓN DEL RAÍZ Y SCROLL
+   ========================================== */
+html {
+  /* Scroll suave para navegación interna (#servicios, #contacto) */
+  scroll-behavior: smooth;
+  /* Evita saltos horizontales molestos en mobile */
+  overflow-x: hidden;
+  /* Ajusta el tamaño de fuente base a nivel navegador */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ==========================================
+   3. ESTILOS DE CUERPO (BODY)
+   ========================================== */
+body {
+  min-height: 100vh;
+  /* Anti-aliasing para que las fuentes se vean nítidas y finas */
+  -webkit-font-smoothing: antialiasing;
+  -moz-osx-font-smoothing: grayscale;
+  /* Variables de tu _config.scss o colores base por defecto */
+  background-color: #fcfcfd;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+/* ==========================================
+   4. ELEMENTOS MULTIMEDIA (IMÁGENES Y VIDEOS)
+   ========================================== */
+/* Evita que imágenes grandes rompan el layout en celulares */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================
+   5. FORMULARIOS Y ELEMENTOS INTERACTIVOS
+   ========================================== */
+/* Heredan la tipografía del body en lugar de la del sistema */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Cambia el cursor automáticamente en elementos clickeables */
+button,
+a,
+select {
+  cursor: pointer;
+}
+
+/* Remueve bordes por defecto en botones */
+button {
+  background: none;
+  border: none;
+  font-family: $font-primary;
+}
+
+/* Evita que los textareas se puedan deformar feo hacia los lados */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================
+   6. TIPOGRAFÍA Y TEXTO
+   ========================================== */
+/* Evita el desbordamiento de palabras largas o URLs */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Títulos con balance de líneas para que no quede una palabra sola abajo */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+  line-height: 1;
+  font-family: $font-heading;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 44px;  
+  @include desktop(){
+    font-size: 72px;
+  }
+}
+
+h2 {
+  font-size: 30px;
+  @include desktop(){
+    font-size: 48px;
+  }
+}
+
+p {
+  text-wrap: pretty;
+  line-height: 1.6;
+  font-family: $font-primary;
+}
+
+/* Enlaces limpios por defecto */
+a {
+  color: inherit;
+  text-decoration: none;
+  font-family: $font-primary;
+  // font-weight: 200;
+}
+
+span {
+  // font-weight: 200;
+}
+
+/* Listas sin viñetas por defecto (útil para navs y footers) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* ==========================================
+   7. ACCESIBILIDAD (Reducción de movimiento)
+   ========================================== */
+/* Si el usuario tiene desactivadas las animaciones en su Windows/Mac/iOS */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

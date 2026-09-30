@@ -1,0 +1,49 @@
+.heroLayout {
+  // --- CONFIGURACIÓN PARA MOBILE ---
+  padding: 11rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  // min-height: 100vh;
+  
+  &.main {background-color: $bg-main;}
+  &.soft {background-color: $bg-soft;}
+  &.bgImage {
+    background-image: url('https://images.unsplash.com/photo-1630226040750-d934f017f0e4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+    // background-attachment: fixed;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      /* El gradiente: empieza sólido, se aclara al medio y se vuelve muy transparente al final */
+      background: linear-gradient(
+        // to right, 
+        rgba($bg-dark, .4) 100%   /* to-background/40 */
+        );
+      }
+    }
+  
+    .container {
+      z-index: 100;
+      width: 100%;
+      @include container;
+  }
+
+  // --- CONFIGURACIÓN PARA DESKTOP ---
+  @include desktop {
+    // min-height: 30rem;
+    // padding:0;
+    
+    .container {
+      }
+    }
+}

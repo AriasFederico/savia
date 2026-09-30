@@ -1,0 +1,71 @@
+.container {
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {}
+
+.subtitle {
+    margin-top: $space-2;
+    color: $foreground-muted;
+    font-size: $font-lg;
+}
+
+.carousel {
+    margin-top: $space-4;
+    overflow: hidden;
+    width: 100%;
+}
+
+.track {
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+.group {
+    display: flex;
+    flex: 0 0 auto;
+    gap: $space-2;
+    padding-right: $space-2;
+}
+
+.item {
+    flex: 0 0 auto;
+    padding: $space-3 $space-4;
+    font-family: $font-heading;
+    white-space: nowrap;
+    color: $foreground-muted;
+    font-size: $font-xl;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-40%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .track {
+        animation: none;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .group[aria-hidden='true'] {
+        display: none;
+    }
+}

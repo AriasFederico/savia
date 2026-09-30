@@ -1,0 +1,37 @@
+.container {
+    background-color: $white;
+    margin-top: $space-2;
+    padding: $space-3;
+    border-radius: $radius-md;
+    border: 1px solid $color-border;
+    transition: $transition-normal;
+
+    @include tablet(){
+        margin: 0;
+    }
+
+    &:hover {
+        border-color: $foreground-muted;
+    }
+}
+
+.icon {
+    background-color: $bg-soft;
+    width: fit-content;
+    padding: $space-2;
+    border-radius: 50%;
+}
+
+.title {
+    margin-top: $space-2;
+    font-size: $font-xl;
+}
+
+.desc {
+    margin-top: $space-2;
+    color: $foreground-muted;
+}
+
+.cta {
+    margin-top: $space-3;
+}

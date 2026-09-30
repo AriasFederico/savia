@@ -1,0 +1,24 @@
+.section {
+    padding: $space-9 0;
+    &.main {background-color: $bg-main;}
+    &.soft {background-color: $bg-soft;}
+    &.dark {background-color: $bg-dark}
+
+    .container {
+        @include container;
+    }
+
+    @include desktop(){
+        .container {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            // cambiar justify en caso de ser necesario
+            justify-content: center;
+            gap: $space-4; 
+            &.column {flex-direction: column;}
+            &.row_reverse {flex-direction: row-reverse;}
+            &.column_reverse {flex-direction: column-reverse;}
+        }
+    }
+}

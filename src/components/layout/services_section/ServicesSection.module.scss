@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+}
+
+.title {}
+
+.subtitle {
+    margin-top: $space-2;
+    color: $foreground-muted;
+    font-size: $font-lg;
+}
+
+.items {
+    margin-top: $space-4;
+
+    @include tablet(){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:$space-2;
+    }
+}
