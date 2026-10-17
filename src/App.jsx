@@ -26,7 +26,7 @@ function App() {
       <AboutSection />
       <ServicesSection buildWaLink={buildWaLink} />
       <ModalitiesSection />
-      <CoverageSection />
+     
       <OfficeSection />
       <LocationSection />
       <TestimonialsSection />
